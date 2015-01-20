@@ -1,6 +1,6 @@
 {
   "name": "url-parse-as-address",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Parse a url assuming `http` if no protocol or `//` is provided.",
   "main": "index.js",
   "directories": {
