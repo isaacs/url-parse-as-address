@@ -4,7 +4,9 @@ var parse = require('../')
 var tests = {
   'x': 'http://x/',
   'foo.com': 'http://foo.com/',
-  'a@b:123/c': 'http://a@b:123/c'
+  'a@b:123/c': 'http://a@b:123/c',
+  '//foo.com': 'http://foo.com/',
+  'https://foo.com': 'https://foo.com/',
 }
 
 Object.keys(tests).forEach(function (c) {

@@ -8,10 +8,10 @@ parse.parse = parse
 function parse (str, parseQueryString) {
   assert.equal(typeof str, 'string')
   var p = url.parse(str, parseQueryString)
-  if (!p.slashes)
-    p = url.parse('http://' + str, parseQueryString)
-  else if (!p.protocol)
-    p = url.parse('http:' + str, parseQueryString)
+  if ((!p.protocol && !p.hostname && /^\/\//.test(p.pathname)) || !p.slashes) {
+    var s = /^\/\//.test(str) ? '' : '//'
+    p = url.parse('http:' + s + str, parseQueryString)
+  }
 
   return p
 }

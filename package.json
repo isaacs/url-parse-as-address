@@ -26,6 +26,6 @@
   },
   "homepage": "https://github.com/isaacs/url-parse-as-address",
   "devDependencies": {
-    "tap": "^1.2.0"
+    "tap": "^15.1.6"
   }
 }
