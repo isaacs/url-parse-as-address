@@ -2,10 +2,11 @@ var test = require('tap').test
 var parse = require('../')
 
 var tests = {
-  'x': 'http://x/',
-  'foo.com': 'http://foo.com/',
-  'a@b:123/c': 'http://a@b:123/c',
-  '//foo.com': 'http://foo.com/',
+  'x': 'https://x/',
+  'foo.com': 'https://foo.com/',
+  'a@b:123/c': 'https://a@b:123/c',
+  '//foo.com': 'https://foo.com/',
+  'http://foo.com': 'http://foo.com/',
   'https://foo.com': 'https://foo.com/',
 }
 

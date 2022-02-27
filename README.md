@@ -1,6 +1,6 @@
 # url-parse-as-address
 
-Parse a url assuming `http` if no protocol or `//` is provided.
+Parse a url assuming `https` if no protocol or `//` is provided.
 
 Useful for parsing things like `foo.com` and not interpreting it as a
 path.
@@ -12,7 +12,7 @@ var parse = require('url-parse-as-address')
 var assert = require('assert')
 
 assert.deepEqual(parse('foo.com:1234/x?y=z#a=b'),
-  { protocol: 'http:',
+  { protocol: 'https:',
     slashes: true,
     auth: null,
     host: 'foo.com:1234',
@@ -23,10 +23,10 @@ assert.deepEqual(parse('foo.com:1234/x?y=z#a=b'),
     query: 'y=z',
     pathname: '/x',
     path: '/x?y=z',
-    href: 'http://foo.com:1234/x?y=z#a=b' })
+    href: 'https://foo.com:1234/x?y=z#a=b' })
 
 assert.deepEqual(parse('foo.com:1234/x?y=z#a=b', true),
-  { protocol: 'http:',
+  { protocol: 'https:',
     slashes: true,
     auth: null,
     host: 'foo.com:1234',
@@ -37,12 +37,12 @@ assert.deepEqual(parse('foo.com:1234/x?y=z#a=b', true),
     query: { y: 'z' },
     pathname: '/x',
     path: '/x?y=z',
-    href: 'http://foo.com:1234/x?y=z#a=b' })
+    href: 'https://foo.com:1234/x?y=z#a=b' })
 
 // etc
 ```
 
-By default this lib assumes `http:` is the protocol if none is
+By default this lib assumes `https:` is the protocol if none is
 provided, because that's what web browsers do.
 
 ## API

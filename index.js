@@ -10,7 +10,7 @@ function parse (str, parseQueryString) {
   var p = url.parse(str, parseQueryString)
   if ((!p.protocol && !p.hostname && /^\/\//.test(p.pathname)) || !p.slashes) {
     var s = /^\/\//.test(str) ? '' : '//'
-    p = url.parse('http:' + s + str, parseQueryString)
+    p = url.parse('https:' + s + str, parseQueryString)
   }
 
   return p
